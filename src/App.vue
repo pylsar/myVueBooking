@@ -6,9 +6,14 @@
       <nav-bot />
     </header>
     <main>
-      <presentation />
+      <presentation :currentTab="currentTab"/>
+      <tabs 
+        @tabClickSum = "tabClickSum"
+        @tabClickMeal = "tabClickMeal"
+        @tabClickEx = "tabClickEx"
+        @tabClickTr = "tabClickTr"
+      />
     </main>
-    <router-view/>
     <div style="margin-top: 100px;"></div>
   </div>
 </template>
@@ -18,13 +23,34 @@ import NavTop from '@/components/NavTop.vue';
 import NavBar from '@/components/NavBar.vue';
 import NavBot from '@/components/NavBot.vue';
 import Presentation from '@/components/Presentation.vue';
+import Tabs from '@/components/Tabs.vue'
   export default{
     name: 'App',
     components: {
       NavTop,
       NavBar,
       NavBot,
-      Presentation
+      Presentation,
+      Tabs
+    },
+    data(){
+      return{
+      currentTab: 0
+      }
+    },
+    methods:{
+      tabClickSum(){
+          this.currentTab = 0;
+      },
+      tabClickMeal(){
+          this.currentTab = 1;
+      },
+      tabClickEx(){
+          this.currentTab = 2;
+      },
+      tabClickTr(){
+          this.currentTab = 3;
+      }
     }
   }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-info">
+    <div v-if="currentTab === 0" class="tab-info">
         <span class="tab-info__before-price">price starts as</span>
         <span class="tab-info__price">$ 8,500</span>
         <span class="tab-info__after-price">per room / night</span>
@@ -7,7 +7,12 @@
 </template>
 <script>
 export default{
-    name: 'TabInfo'
+    name: 'TabInfo',
+    props: {
+        current: {
+            type: Number,
+        },
+    },
 }
 </script>
 <style lang="scss">

@@ -13,7 +13,7 @@
                                 <!-- <span class="presentation__before-price">price starts as</span>
                                 <span class="presentation__price">$ 8,500</span>
                                 <span class="presentation__after-price">per room / night</span> -->
-                                <tab-info />
+                                <tab-info :currentTab="currentTab"/>
                             </div>
                             <div class="presentation__content-top--right">
                                 <div class="presentation__icon-box">
@@ -64,6 +64,11 @@ import Googlemap from './Googlemap.vue'
 import TabInfo from '@/components/TabInfo'
 export default{
     name: 'Presentation',
+    props: {
+        currentTab: {
+            type: Number,
+        },
+    },
     components: {
         PresentationTop,
         Googlemap,
@@ -119,8 +124,6 @@ export default{
         justify-content: space-between;
         &--left{
             color: #fff;
-            // display: flex;
-            // flex-direction: column;
         }
         &--bottom{
             display: flex;
