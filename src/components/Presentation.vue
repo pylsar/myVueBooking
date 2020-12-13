@@ -10,9 +10,6 @@
                     <div class="presentation__content-info">
                         <div class="presentation__content-top">
                             <div class="presentation__content-top--left">
-                                <!-- <span class="presentation__before-price">price starts as</span>
-                                <span class="presentation__price">$ 8,500</span>
-                                <span class="presentation__after-price">per room / night</span> -->
                                 <tab-info :currentTab="currentTab"/>
                             </div>
                             <div class="presentation__content-top--right">
@@ -133,16 +130,6 @@ export default{
             margin-bottom: 17px;
         }
     }
-    // &__before-price{
-    //     font-size: 10px;
-    // }
-    // &__price{
-    //     font-size: 24px;
-    //     font-weight: 700;
-    // }
-    // &__after-price{
-    //     font-size: 12px;
-    // }
     &__icon-box{
         width: 80px;
         display: flex;
