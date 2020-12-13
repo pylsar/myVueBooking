@@ -13,6 +13,8 @@
         @tabClickEx = "tabClickEx"
         @tabClickTr = "tabClickTr"
       />
+      <summary-details /> 
+      <package />
     </main>
     <div style="margin-top: 100px;"></div>
   </div>
@@ -24,6 +26,8 @@ import NavBar from '@/components/NavBar.vue';
 import NavBot from '@/components/NavBot.vue';
 import Presentation from '@/components/Presentation.vue';
 import Tabs from '@/components/Tabs.vue'
+import SummaryDetails from './components/SummaryDetails.vue';
+import Package from './components/Package.vue';
   export default{
     name: 'App',
     components: {
@@ -31,7 +35,9 @@ import Tabs from '@/components/Tabs.vue'
       NavBar,
       NavBot,
       Presentation,
-      Tabs
+      Tabs,
+      SummaryDetails,
+      Package,
     },
     data(){
       return{
