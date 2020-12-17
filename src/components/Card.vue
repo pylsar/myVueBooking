@@ -10,6 +10,9 @@
             </div>
             <div class="card__content">
                 <span class="card__name">{{card.name}}</span>
+                <p class="card__first">
+                   Aute quis duis excepteur excepteur ipsum cat eiusmod consectetur enim laborum magna llit. Ipsum est fugiat velit ea llamco do esse ut in veniam sun in onsequat. Aute quis duis epteur excepteur ipsum occaecat eiusmod nsectetur enim laborum magna mollit. Ipsum est fugiat velit ea ullamco do 
+                </p>
                 <div class="card__info">
                     <div class="card__info-item">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,14 +26,14 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M2.60427 9.02094C3.15125 8.47396 3.89312 8.16666 4.66667 8.16666H9.33333C10.1069 8.16666 10.8487 8.47396 11.3957 9.02094C11.9427 9.56792 12.25 10.3098 12.25 11.0833V12.25C12.25 12.5722 11.9888 12.8333 11.6667 12.8333C11.3445 12.8333 11.0833 12.5722 11.0833 12.25V11.0833C11.0833 10.6192 10.899 10.1741 10.5708 9.84589C10.2426 9.51771 9.79746 9.33333 9.33333 9.33333H4.66667C4.20254 9.33333 3.75742 9.51771 3.42923 9.84589C3.10104 10.1741 2.91667 10.6192 2.91667 11.0833V12.25C2.91667 12.5722 2.6555 12.8333 2.33333 12.8333C2.01117 12.8333 1.75 12.5722 1.75 12.25V11.0833C1.75 10.3098 2.05729 9.56792 2.60427 9.02094Z" fill="white"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M6.99992 2.33333C6.03342 2.33333 5.24992 3.11683 5.24992 4.08333C5.24992 5.04983 6.03342 5.83333 6.99992 5.83333C7.96642 5.83333 8.74992 5.04983 8.74992 4.08333C8.74992 3.11683 7.96642 2.33333 6.99992 2.33333ZM4.08325 4.08333C4.08325 2.4725 5.38909 1.16666 6.99992 1.16666C8.61075 1.16666 9.91659 2.4725 9.91659 4.08333C9.91659 5.69416 8.61075 7 6.99992 7C5.38909 7 4.08325 5.69416 4.08325 4.08333Z" fill="white"/>
                         </svg>
-                        <span>2 x Guests</span>
+                        <span>{{card.guests}} x Guests</span>
                     </div>
                     <div class="card__info-item">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M6.64195 0.70621C6.8526 0.542373 7.14757 0.542373 7.35821 0.70621L12.6082 4.78954C12.7503 4.90006 12.8334 5.06999 12.8334 5.25V11.6667C12.8334 12.1308 12.649 12.5759 12.3209 12.9041C11.9927 13.2323 11.5475 13.4167 11.0834 13.4167H2.91675C2.45262 13.4167 2.0075 13.2323 1.67931 12.9041C1.35112 12.5759 1.16675 12.1308 1.16675 11.6667V5.25C1.16675 5.06999 1.24986 4.90006 1.39195 4.78954L6.64195 0.70621ZM2.33341 5.5353V11.6667C2.33341 11.8214 2.39487 11.9697 2.50427 12.0791C2.61367 12.1885 2.76204 12.25 2.91675 12.25H11.0834C11.2381 12.25 11.3865 12.1885 11.4959 12.0791C11.6053 11.9697 11.6667 11.8214 11.6667 11.6667V5.5353L7.00008 1.90567L2.33341 5.5353Z" fill="white"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M4.66675 7C4.66675 6.67783 4.92792 6.41667 5.25008 6.41667H8.75008C9.07225 6.41667 9.33342 6.67783 9.33342 7V12.8333C9.33342 13.1555 9.07225 13.4167 8.75008 13.4167C8.42792 13.4167 8.16675 13.1555 8.16675 12.8333V7.58333H5.83342V12.8333C5.83342 13.1555 5.57225 13.4167 5.25008 13.4167C4.92792 13.4167 4.66675 13.1555 4.66675 12.8333V7Z" fill="white"/>
                         </svg>
-                        <span>1 x Room</span>
+                        <span>{{card.rooms}} x Room</span>
                     </div>
                 </div>
                 <span class="card__old-price">{{card.oldprice}}</span>
@@ -52,31 +55,41 @@ export default{
                     name: 'Hotel Blue Haven',
                     src: '2.png',
                     oldprice: '$ 10,500',
-                    newprice: '$ 8,500'
+                    newprice: '$ 8,500',
+                    guests: 2,
+                    rooms: 2
                 },
                 {
                     name: 'LUX* Belle Mare',
                     src: '3.png',
                     oldprice: '$ 8,500',
-                    newprice: '$ 3,000'
+                    newprice: '$ 3,000',
+                    guests: 3,
+                    rooms: 2
                 },
                 {
                     name: 'White Palace',
                     src: '4.png',
                     oldprice: '$ 10,500',
-                    newprice: '$ 9,500'
+                    newprice: '$ 9,500',
+                    guests: 2,
+                    rooms: 1
                 },
                 {
                     name: 'Luxury Place',
                     src: '5.png',
                     oldprice: '$ 4,500',
-                    newprice: '$ 2,500'
+                    newprice: '$ 2,500',
+                    guests: 1,
+                    rooms: 1
                 },
                  {
                     name: 'Hotel Five Star',
                     src: '6.png',
                     oldprice: '$ 6,500',
-                    newprice: '$ 3,500'
+                    newprice: '$ 3,500',
+                    guests: 2,
+                    rooms: 2
                 },
             ]
         }
@@ -95,9 +108,9 @@ export default{
         height: 500px;
         border-radius: 6px;
         background: #0A223D;
-        margin-right: 24px;
+        margin-right: 16px;
         margin-bottom: 24px;
-        &:nth-child(3n+3){
+        &:nth-child(2){
             margin-right: 0;
         }
         &__head{
@@ -150,6 +163,33 @@ export default{
                 padding: 11px 26px;
                 border-radius: 6px;
             }
+        }
+        
+        &:last-child{
+            margin-right: 0;
+        }
+        &__first{
+            display: none;
+        }
+        &:first-child{
+            width: 730px;
+            display: flex;
+            & .card__first{
+                display: block;
+            }
+            & .card__head{
+                height: 100%;
+                & img {
+                    height: 100%;
+                }
+            }
+            & .card__head, .card__content{
+                width: 50%;
+            }
+            & .card__info{
+                margin-top: 86px;
+            }
+
         }
     }
 </style>
