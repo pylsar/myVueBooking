@@ -15,6 +15,7 @@
       />
       <summary-details /> 
       <package />
+      <reviews />
     </main>
     <div style="margin-top: 100px;"></div>
   </div>
@@ -28,6 +29,7 @@ import Presentation from '@/components/Presentation.vue';
 import Tabs from '@/components/Tabs.vue'
 import SummaryDetails from './components/SummaryDetails.vue';
 import Package from './components/Package.vue';
+import Reviews from './components/Reviews.vue';
   export default{
     name: 'App',
     components: {
@@ -38,6 +40,7 @@ import Package from './components/Package.vue';
       Tabs,
       SummaryDetails,
       Package,
+      Reviews,
     },
     data(){
       return{

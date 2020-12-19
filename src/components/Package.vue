@@ -1,10 +1,7 @@
 <template>
-    <section class="package">
-        <div class="container">
-            <h2 class="package__title">Other Packages</h2>  
-            <card/>
-        </div>
-
+    <section class="package container">
+        <h2 class="package__title">Other Packages</h2>  
+        <card/>
     </section>
 </template>
 
@@ -20,6 +17,7 @@ export default{
 </script>
 <style lang="scss">
     .package{
+        padding-bottom: 42px;
         &__title{
             font-size: 36px;
             font-weight: 700;
