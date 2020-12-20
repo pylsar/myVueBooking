@@ -1,8 +1,12 @@
 <template>
 <div>
     <div class="cart" v-if="cart.length">
-        <div v-for="(item, index) in cart" :key="index">
+        <div v-for="(item, index) in cart" :key="index" class="cart__item">
+            <img :src=" require('../assets/img/' + item.src) " :alt="item.name">
             <span>{{item.name}}</span>
+            <span>{{item.newprice}}</span>
+            <button>Купить</button>
+            <button>Отказаться</button>
         </div>
     </div>
      <div class="cards">
@@ -12,7 +16,7 @@
         class="card"
         >
             <div class="card__head">
-                <img :src=" require('../assets/img/' + card.src) " alt="">
+                <img :src=" require('../assets/img/' + card.src) " :alt="card.name">
             </div>
             <div class="card__content">
                 <span class="card__name">{{card.name}}</span>
@@ -45,7 +49,11 @@
                 <span class="card__old-price">{{card.oldprice}}</span>
                 <div class="card__buy">
                     <span class="card__price">{{card.newprice}}</span>
-                    <a @click="addToCart(card)" href="#">Book Now</a>
+                    <a 
+                    @click="addToCart(card)"
+                    href="#"
+                    :class="{ 'isBlocked' : disabled}"
+                    >Book Now</a>
                 </div>
             </div>
         </div>
@@ -105,13 +113,15 @@ export default{
                     rooms: 2
                 },
             ],
-            cart:[]
+            cart:[],
+            disabled: false
         }
     },
     methods:{
         addToCart(card){
-            this.cart.push(card)
-            console.log(this.cart)
+            this.cart.push(card);
+            this.disabled = true;
+            // console.log(this.cart)
         }
     }
 }
@@ -122,8 +132,13 @@ export default{
     top: 0;
     left:0;
     right: 0;
-    min-height: 300px;
+    z-index: 1000;
+    min-height: 150px;
     background: green;
+    &__item {
+        width: 100%;
+        height: 150px;
+    }
 }
     .cards{
         display: flex;
@@ -219,5 +234,9 @@ export default{
             }
 
         }
+    }
+    .isBlocked{
+        background: gray!important;
+        pointer-events: none;
     }
 </style>
