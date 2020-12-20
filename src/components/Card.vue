@@ -2,11 +2,16 @@
 <div>
     <div class="cart" v-if="cart.length">
         <div v-for="(item, index) in cart" :key="index" class="cart__item">
-            <img :src=" require('../assets/img/' + item.src) " :alt="item.name">
-            <span>{{item.name}}</span>
-            <span>{{item.newprice}}</span>
-            <button>Купить</button>
-            <button>Отказаться</button>
+            <div class="cart__img">
+                <img :src=" require('../assets/img/' + item.src) " :alt="item.name">
+            </div>
+            <div class="cart__content">
+                <span>{{item.name}}</span>
+                <span>{{item.newprice}}</span>
+            </div>
+           <div class="cart__btn">
+                <button @click="cancel(index)" class="cart__cancel">Отказаться</button>
+           </div>
         </div>
     </div>
      <div class="cards">
@@ -122,6 +127,10 @@ export default{
             this.cart.push(card);
             this.disabled = true;
             // console.log(this.cart)
+        },
+        cancel(index){
+            this.cart.splice(index,1);
+            this.disabled = false;
         }
     }
 }
@@ -133,110 +142,144 @@ export default{
     left:0;
     right: 0;
     z-index: 1000;
-    min-height: 150px;
-    background: green;
+    min-height: 100px;
+    background: lighten(#0A223D, 5%);
     &__item {
         width: 100%;
-        height: 150px;
+        height: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__img{
+        width: 80px;
+        height: 80px;
+        box-shadow: 10px 5px 5px black;
+        border-radius: 6px;
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+    }
+    &__btn{
+        display: flex;
+    }
+    &__cancel{
+        background: #EC1F46;
+        color: #fff;
+        font-size: 14px;
+        padding: 11px 26px;
+        border-radius: 6px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        &:hover{
+            opacity: .8;
+        }
     }
 }
-    .cards{
+.cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card{
+    width: 350px;
+    height: 500px;
+    border-radius: 6px;
+    background: #0A223D;
+    margin-right: 16px;
+    margin-bottom: 24px;
+    &:nth-child(2){
+        margin-right: 0;
+    }
+    &__head{
+        height: 50%;
+        border-radius: 6px 6px 0px 0px;
+        & img{
+            width: 100%;
+        }
+    }
+    &__content{
+        padding: 30px;
+        border-radius: 0px 0px 6px 6px;
+        color: #fff;
+    }
+    &__name{
+        font-size: 18px;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 24px;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        & svg{
+            margin-right: 14px;
+        }
+    }
+    &__info-item{
+        margin-bottom: 12px;
+    }
+    &__old-price{
+        margin-top: 24px;
+        text-decoration: line-through;
+        font-size: 14px;
+    }
+    &__price{
+        font-size: 24px;
+        font-weight: 700;
+    }
+    &__buy{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
-    }
-    .card{
-        width: 350px;
-        height: 500px;
-        border-radius: 6px;
-        background: #0A223D;
-        margin-right: 16px;
-        margin-bottom: 24px;
-        &:nth-child(2){
-            margin-right: 0;
-        }
-        &__head{
-            height: 50%;
-            border-radius: 6px 6px 0px 0px;
-            & img{
-                width: 100%;
-            }
-        }
-        &__content{
-            padding: 30px;
-            border-radius: 0px 0px 6px 6px;
+        & a {
+            background: #EC1F46;
+            text-decoration: none;
             color: #fff;
-        }
-        &__name{
-            font-size: 18px;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 24px;
-        }
-        &__info{
-            display: flex;
-            flex-direction: column;
-            font-size: 12px;
-            & svg{
-                margin-right: 14px;
-            }
-        }
-        &__info-item{
-            margin-bottom: 12px;
-        }
-        &__old-price{
-            margin-top: 24px;
-            text-decoration: line-through;
             font-size: 14px;
+            padding: 11px 26px;
+            border-radius: 6px;
         }
-        &__price{
-            font-size: 24px;
-            font-weight: 700;
+    }
+    
+    &:last-child{
+        margin-right: 0;
+    }
+    &__first{
+        display: none;
+    }
+    &:first-child{
+        width: 730px;
+        display: flex;
+        & .card__first{
+            display: block;
         }
-        &__buy{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            & a {
-                background: #EC1F46;
-                text-decoration: none;
-                color: #fff;
-                font-size: 14px;
-                padding: 11px 26px;
-                border-radius: 6px;
-            }
-        }
-        
-        &:last-child{
-            margin-right: 0;
-        }
-        &__first{
-            display: none;
-        }
-        &:first-child{
-            width: 730px;
-            display: flex;
-            & .card__first{
-                display: block;
-            }
-            & .card__head{
+        & .card__head{
+            height: 100%;
+            & img {
                 height: 100%;
-                & img {
-                    height: 100%;
-                }
             }
-            & .card__head, .card__content{
-                width: 50%;
-            }
-            & .card__info{
-                margin-top: 86px;
-            }
-
         }
+        & .card__head, .card__content{
+            width: 50%;
+        }
+        & .card__info{
+            margin-top: 86px;
+        }
+
     }
-    .isBlocked{
-        background: gray!important;
-        pointer-events: none;
-    }
+}
+.isBlocked{
+    background: gray!important;
+    pointer-events: none;
+}
 </style>
