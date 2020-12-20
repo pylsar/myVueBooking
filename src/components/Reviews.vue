@@ -17,6 +17,8 @@ export default {
 
 <style lang="scss">
 .reviews{
+    position: relative;
+    overflow-x: hidden;
     &__title{
         font-size: 36px;
         font-weight: 700;
