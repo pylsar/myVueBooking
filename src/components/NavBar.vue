@@ -95,10 +95,6 @@
         }
         &__social{
             width: 33%;
-            // & svg{
-            //     width: 32px;
-            //     height: 32px;
-            // }
             & ul{
                 list-style: none;
                 display: flex;
