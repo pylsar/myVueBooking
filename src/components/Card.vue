@@ -1,5 +1,11 @@
 <template>
-    <div class="cards">
+<div>
+    <div class="cart" v-if="cart.length">
+        <div v-for="(item, index) in cart" :key="index">
+            <span>{{item.name}}</span>
+        </div>
+    </div>
+     <div class="cards">
         <div 
         v-for="(card, index) in cards"
         :key="index" 
@@ -39,11 +45,13 @@
                 <span class="card__old-price">{{card.oldprice}}</span>
                 <div class="card__buy">
                     <span class="card__price">{{card.newprice}}</span>
-                    <a href="#">Book Now</a>
+                    <a @click="addToCart(card)" href="#">Book Now</a>
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
+</div>
+   
 </template>
 <script>
 export default{
@@ -96,12 +104,27 @@ export default{
                     guests: 2,
                     rooms: 2
                 },
-            ]
+            ],
+            cart:[]
+        }
+    },
+    methods:{
+        addToCart(card){
+            this.cart.push(card)
+            console.log(this.cart)
         }
     }
 }
 </script>
 <style lang="scss">
+.cart{
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0;
+    min-height: 300px;
+    background: green;
+}
     .cards{
         display: flex;
         justify-content: space-between;
