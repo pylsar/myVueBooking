@@ -1,23 +1,25 @@
 <template>
   <div id="app">
-    <header>
-      <nav-top />
-      <nav-bar />
-      <nav-bot />
-    </header>
-    <main>
-      <presentation :currentTab="currentTab"/>
-      <tabs 
-        @tabClickSum = "tabClickSum"
-        @tabClickMeal = "tabClickMeal"
-        @tabClickEx = "tabClickEx"
-        @tabClickTr = "tabClickTr"
-      />
-      <summary-details /> 
-      <package />
-      <reviews />
-    </main>
-    <div style="margin-top: 100px;"></div>
+    <div class="wrap">
+      <header>
+        <nav-top />
+        <nav-bar />
+        <nav-bot />
+      </header>
+      <main>
+        <presentation :currentTab="currentTab"/>
+        <tabs 
+          @tabClickSum = "tabClickSum"
+          @tabClickMeal = "tabClickMeal"
+          @tabClickEx = "tabClickEx"
+          @tabClickTr = "tabClickTr"
+        />
+        <summary-details /> 
+        <package />
+        <reviews />
+      </main>
+    </div>
+    <the-footer />
   </div>
 </template>
 
@@ -30,6 +32,7 @@ import Tabs from '@/components/Tabs.vue'
 import SummaryDetails from './components/SummaryDetails.vue';
 import Package from './components/Package.vue';
 import Reviews from './components/Reviews.vue';
+import TheFooter from './components/TheFooter.vue';
   export default{
     name: 'App',
     components: {
@@ -41,6 +44,7 @@ import Reviews from './components/Reviews.vue';
       SummaryDetails,
       Package,
       Reviews,
+      TheFooter
     },
     data(){
       return{
@@ -70,11 +74,16 @@ import Reviews from './components/Reviews.vue';
   padding: 0;
   box-sizing: border-box;
 }
-body{
+.wrap{
+  position: relative;
+  z-index: 200;
   background: #fff;
 }
+body{
+  // background: #fff;
+  padding-bottom: 540px;
+}
 #app {
-  // font-family: 'Luckiest Guy', cursive;
   font-family: 'Mulish', sans-serif;
 }
 
