@@ -17,6 +17,7 @@
         <summary-details /> 
         <package />
         <reviews />
+        <the-form />
       </main>
     </div>
     <the-footer />
@@ -33,6 +34,7 @@ import SummaryDetails from './components/SummaryDetails.vue';
 import Package from './components/Package.vue';
 import Reviews from './components/Reviews.vue';
 import TheFooter from './components/TheFooter.vue';
+import TheForm from './components/TheForm.vue';
   export default{
     name: 'App',
     components: {
@@ -44,7 +46,8 @@ import TheFooter from './components/TheFooter.vue';
       SummaryDetails,
       Package,
       Reviews,
-      TheFooter
+      TheFooter,
+      TheForm
     },
     data(){
       return{
@@ -80,7 +83,6 @@ import TheFooter from './components/TheFooter.vue';
   background: #fff;
 }
 body{
-  // background: #fff;
   padding-bottom: 540px;
 }
 #app {

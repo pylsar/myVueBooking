@@ -1,25 +1,8 @@
 <template>
     <footer class="footer container">
-        <div class="footer__form">
-            <div class="footer__left">
-                <label for="newsletter"></label>
-                <input type="text" id="newsletter">
-                <button>send</button>
-            </div>
-            <div class="footer__right">
-                <span>Send us a massege</span>
-                <form>
-                    <div>
-                        <input type="text">
-                        <input type="password">
-                    </div>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <button>send</button>
-                </form>
-            </div>
-        </div>
+
         <div class="footer__copy">
-            Disclaimer    Conditions of use    Cancellation policy
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
         </div>
     </footer>
 </template>
