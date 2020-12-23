@@ -15,7 +15,9 @@
                     <input type="text" placeholder="Name">
                     <input type="email" placeholder="Email">
                 </div>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <div class="form__area-wrap">
+                    <textarea></textarea>
+                </div>
                 <div class="form__btn">
                     <button>send</button>
                 </div>
@@ -44,17 +46,19 @@ export default {
         outline: none;
         border-bottom: 1px solid #EC1F46;
         padding-left: 5px;
+        padding-bottom: 5px;
         font-size: 16px;
         margin-bottom: 12px;
         &::placeholder{
             padding-left: 5px;
+            padding-bottom: 5px;
             font-size: 16px;
         }
     }
     &__left{
         display: flex;
         flex-direction: column;
-        width: 400px;
+        width: 50%;
         height: 400px;
         margin-right: 24px;
         & span {
@@ -71,9 +75,10 @@ export default {
         }
     }
     &__right{
-        flex: 1;
-        justify-content: center;
+        width: 50%;
         height: 400px;
+        display: flex;
+        flex-direction: column;
         & span {
             display: block;
             margin-bottom: 60px;
@@ -84,9 +89,33 @@ export default {
             margin-right: 24px;
             margin-bottom: 24px;
         }
+        & textarea {
+            background: transparent;
+            width: 100%;
+            max-height: 150px;
+            height: 100%;
+            border: 1px solid #EC1F46;
+            resize: none;
+        }
+    }
+    &__area-wrap{
+        width: 87%;
+        height: 55%;
+            // margin-bottom: 36px;
+
+        border: 1px solid red;
     }
     &__btn {
         margin-top: auto;
+        & button {
+            background: #EC1F46;
+            color: #fff;
+            font-size: 14px;
+            padding: 11px 26px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+        }
     }
 }
 
