@@ -1,7 +1,7 @@
 <template>
     <div class="form container">
         <div class="form__left form__item">
-            <span>subscribe to our</span>
+            <span>Subscribe to our</span>
             <label for="newsletter">Newsletter</label>
             <input type="text" id="newsletter" placeholder="Newsletter">
             <div class="form__btn">
@@ -11,12 +11,12 @@
         <div class="form__right form__item">
             <span>Send us a massege</span>
             <form>
-                <div>
+                <div class="form__field">
                     <input type="text" placeholder="Name">
                     <input type="email" placeholder="Email">
                 </div>
                 <div class="form__area-wrap">
-                    <textarea></textarea>
+                    <textarea maxlength="300"></textarea>
                 </div>
                 <div class="form__btn">
                     <button>send</button>
@@ -96,14 +96,18 @@ export default {
             height: 100%;
             border: 1px solid #EC1F46;
             resize: none;
+            padding: 5px;
+            color: #fff;
+            border-radius: 6px;
+            &:focus{
+                outline: none;
+            }
         }
     }
     &__area-wrap{
         width: 87%;
         height: 55%;
-            // margin-bottom: 36px;
-
-        border: 1px solid red;
+        margin-bottom: 36px;
     }
     &__btn {
         margin-top: auto;
@@ -116,6 +120,9 @@ export default {
             border: none;
             outline: none;
         }
+    }
+    &__field{
+        height: 90px;
     }
 }
 

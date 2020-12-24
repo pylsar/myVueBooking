@@ -25,5 +25,12 @@ export default{
         left: 0;
         right: 0;
         z-index: -1;
+        &__copy{
+            position: absolute;
+            left: 50%;
+            bottom: 12px;
+            transform: translateX(-50%);
+            font-size: 12px;
+        }
     }
 </style>
