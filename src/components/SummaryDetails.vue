@@ -1,5 +1,5 @@
 <template>
-    <section class="summary">
+    <section class="summary" id="options">
         <div class="container">
             <div class="summary__head">
                 <h3 class="summary__title">Package Summery</h3>

@@ -45,7 +45,7 @@
                                 <span class="presentation__number">12100</span>
                             </div>
                         </div>
-                        <a class="presentation__link" href="#">View Other Options</a>
+                        <a class="presentation__link" href="#options">View Other Options</a>
                     </div>
                     <div class="presentation__content-map">
                         <googlemap/>
@@ -151,6 +151,9 @@ export default{
         background: #EC1F46;
         border-radius: 4px;
         display: block;
+        &:hover{
+            opacity: .8;
+        }
     }
     
     

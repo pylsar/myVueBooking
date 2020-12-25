@@ -248,6 +248,9 @@ export default{
             font-size: 14px;
             padding: 11px 26px;
             border-radius: 6px;
+            &:hover{
+                opacity: .8;
+            }
         }
     }
     

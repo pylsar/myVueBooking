@@ -49,6 +49,7 @@ export default {
         padding-bottom: 5px;
         font-size: 16px;
         margin-bottom: 12px;
+        color: #fff;
         &::placeholder{
             padding-left: 5px;
             padding-bottom: 5px;
@@ -107,7 +108,7 @@ export default {
     &__area-wrap{
         width: 87%;
         height: 55%;
-        margin-bottom: 36px;
+        margin-bottom: 34px;
     }
     &__btn {
         margin-top: auto;
@@ -119,6 +120,10 @@ export default {
             border-radius: 6px;
             border: none;
             outline: none;
+            cursor: pointer;
+            &:hover{
+                opacity: .8;
+            }
         }
     }
     &__field{
