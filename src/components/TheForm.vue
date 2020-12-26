@@ -131,4 +131,48 @@ export default {
     }
 }
 
+@media screen and (max-width: 680px) {
+    .form{
+        flex-direction: column;
+        &__left{
+            width: 100%;
+            height: auto;
+            margin-right: 0;
+            & label {
+                font-size: 20px;
+                font-weight: 700;
+            }
+        }
+        &__right{
+            width: 100%;            
+        }
+        &__area-wrap{
+            width: 100%;
+        }
+        & input{
+            width: calc( 50% - 12px);
+        }
+        & #newsletter{
+            width: 100%;
+        }
+        &__btn{
+            margin-top: 24px;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 520px) {
+    .form{
+        &__field{
+            display: flex;
+            flex-direction: column;
+            & input {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
 </style>

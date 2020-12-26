@@ -25,4 +25,13 @@ export default{
             margin-bottom: 65px;
         }
     }
+    @media screen and (max-width: 768px) {
+        .package{
+        padding-bottom: 24px;
+        &__title{
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+    }
+    }
 </style>

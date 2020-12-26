@@ -204,6 +204,8 @@ export default{
         border-radius: 6px 6px 0px 0px;
         & img{
             width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
     &__content{
@@ -285,4 +287,56 @@ export default{
     background: gray!important;
     pointer-events: none;
 }
+
+@media screen and (max-width: 1166px) {
+    .card{
+        width: calc(50% - 12px);
+        margin-right: 0;
+        &:first-child{
+            width: 100%;
+        }
+        &__head{
+            height: 250px;
+            & img{
+                border-radius: 6px 6px 0px 0px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card{
+        &:first-child{
+           & .card__info{
+               margin-top: 40px;
+           } 
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .card{
+        width: 100%;
+        &:first-child{
+            flex-direction: column;
+            & .card__head{
+                width: 100%;
+                height: 250px;
+                & img{
+                    border-radius: 6px 6px 0px 0px;
+                }
+            }
+            & .card__first{
+                display: none;
+            }
+            & .card__content{
+                width: 100%;
+            }
+            & .card__info{
+                margin-top: 0;  
+            }
+        }
+    }
+}
+
 </style>

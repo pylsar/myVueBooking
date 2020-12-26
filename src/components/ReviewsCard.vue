@@ -151,4 +151,14 @@ export default {
         transform: rotate(180deg);
     }
 }
+
+@media screen and (max-width: 768px) {
+    .reviews-card__content p{
+          display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+}
+
 </style>
