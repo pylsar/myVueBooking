@@ -28,7 +28,14 @@ export default {
 
 <style lang="scss">
 #map {
-    width: 350px;
-    height: 210px;
+  width: 350px;
+  height: 210px;
+}
+
+@media screen and (max-width: 680px) {
+  #map {
+  width: 100%;
+  height: 300px;
+}
 }
 </style>

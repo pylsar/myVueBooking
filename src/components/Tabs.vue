@@ -1,14 +1,31 @@
 <template>
     <ul class="tabs">
-        <li @click="tabClickSum">Total Sum</li>
-        <li @click="tabClickMeal">Cost of Meal</li>
-        <li @click="tabClickEx">Cost of Excursions</li>
-        <li @click="tabClickTr">Cost of Transfers</li>
+        <li @click="tabClickSum">
+            <span v-if="mobile">Sum</span>
+            <span v-else>Total Sum</span>
+        </li>
+        <li @click="tabClickMeal">
+            <span v-if="mobile">Meal</span>
+            <span v-else>Cost of Meal</span>
+        </li>
+        <li @click="tabClickEx">
+            <span v-if="mobile">Excursion</span>
+            <span v-else>Cost of Excursions</span>
+        </li>
+        <li @click="tabClickTr">
+           <span v-if="mobile">Transfer</span>
+           <span v-else> Cost of Transfers</span>
+        </li>
     </ul>
 </template>
 <script>
     export default{
         name: 'Tabs',
+        data(){
+            return{
+                mobile: false
+            }
+        },
         methods:{
             tabClickSum(){
                 this.$emit('tabClickSum')
@@ -21,8 +38,20 @@
             },
             tabClickTr(){
                 this.$emit('tabClickTr')
+            },
+            onResize() {
+                this.mobile = window.innerWidth <= 640;
             }
-        }
+        },
+        created() {
+            //отслеживаем ресайз экрана
+            window.addEventListener('resize', this.onResize);
+            this.onResize();
+        },
+          destroyed() {
+              //не уверен что надо
+            window.removeEventListener('resize', this.onResize)
+        },
     }
 </script>
 <style lang="scss">
@@ -49,6 +78,25 @@
         }
         &:hover{
             opacity: .7;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .tabs{
+        max-width: 80%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .tabs{
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .tabs{
+        max-width: 100%;
+        & li {
+            padding: 10px 10px;
         }
     }
 }

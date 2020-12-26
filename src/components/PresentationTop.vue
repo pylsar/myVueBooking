@@ -7,6 +7,7 @@
                 <span>&#9733;</span>
                 <span>&#9733;</span>
                 <span>&#9733;</span>
+                <span class="presentationtop__left-mobile">user rating: 4/5</span>
             </div>
             <div class="presentationtop__left-title">
                 <h2>GRAND HILTON HOTEL</h2>
@@ -34,6 +35,11 @@ export default{
     height: 100px;
     &__left-star{
         color: #F2994A;
+    }
+    &__left-mobile{
+        padding-left: 12px;
+        color: black;
+        display: none;
     }
     &__left-title{
         display: flex;
@@ -70,5 +76,30 @@ export default{
     &__right-text{
         font-size: 8px;
     }
+}
+@media screen and (max-width: 550px) {
+    .presentationtop{
+        &__left{
+            width: 100%;
+        }
+        &__left-star{
+            display: flex;
+        }
+        &__left-mobile{
+            display: block;
+        }
+        &__right{
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+.presentationtop{
+    &__left-title{
+        & h2{
+            font-size: 16px;
+        }
+    }
+}
 }
 </style>

@@ -73,4 +73,29 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    .navtop{
+        &__left{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            & span:not(:last-child){
+                margin-bottom: 6px;
+            }
+        }
+        &__right-item{
+            margin-left: 24px;
+        }
+    }
+}
+@media screen and (max-width: 520px) {
+    .navtop{
+        &__right{
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+
 </style>

@@ -93,6 +93,7 @@ export default{
         & img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
     }
     &__content-right{
@@ -154,8 +155,52 @@ export default{
         &:hover{
             opacity: .8;
         }
+    }    
+}
+
+@media screen and (max-width: 880px) {
+    .presentation{
+        &__content{
+            flex-direction: column;
+        }
+        &__content-left{
+            max-width: 100%;
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 24px;
+        }
+        &__content-right{
+            flex-direction: row;
+        }
+        &__content-info{
+            width: calc(50% - 12px);
+
+        }
+        &__content-map{
+            width: calc(50% - 12px);
+        }
+        &__link{
+            padding: 13px 13px;
+        }
     }
-    
-    
+}
+
+@media screen and (max-width: 680px) {
+   .presentation{
+        &__content-right{
+            flex-direction: column;
+            width: 100%;
+        }
+        &__content-info{
+            width: 100%;
+
+        }
+        &__content-map{
+            width: 100%;
+        }
+        &__link{
+            display: inline-block;
+        }
+   } 
 }
 </style>

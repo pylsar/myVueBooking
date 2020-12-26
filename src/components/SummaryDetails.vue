@@ -143,6 +143,7 @@ export default{
                     justify-content: flex-start;
                     align-items: center;
                     font-size: 12px;
+                    padding-right: 12px;
                     & svg{
                         margin-right: 24px;
                     }

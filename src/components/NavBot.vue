@@ -32,8 +32,16 @@ export default{
         justify-content: space-between;
         align-items: center;
         height: 80px;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            height: 6px;
+            background-color: #EC1F46;
+            border-radius: 6px;
+        }
         & li {
             list-style: none;
+            margin-left: 12px;
+            white-space: nowrap;
             & a {
                 text-decoration: none;
                 text-transform: uppercase;
